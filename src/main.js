@@ -1,6 +1,5 @@
 const list = document.querySelector("#list");
 
-//
 document.querySelectorAll('input[type="radio"]').forEach((element) => {
   element.addEventListener("change", () => {
     if (element.checked) {
@@ -22,7 +21,6 @@ document.querySelectorAll('input[type="radio"]').forEach((element) => {
   });
 });
 
-//
 class Task {
   constructor(id, name, status) {
     this.id = id;
@@ -147,3 +145,33 @@ const createNode = (element, classList, atribute, content) => {
   node.innerHTML = content;
   return node;
 };
+
+//
+
+document.querySelector("#btnTheme").addEventListener("click", () => {
+  const body = document.querySelector("body");
+  const state = body.getAttribute("data-bs-theme");
+  const iconTheme = document.querySelector("#themeIcon");
+  if (state === "dark") {
+    if (!document.startViewTransition) {
+      body.setAttribute("data-bs-theme", "light");
+      iconTheme.src = "src/icon-sun.svg";
+
+      return;
+    }
+    document.startViewTransition(() => {
+      body.setAttribute("data-bs-theme", "light");
+      iconTheme.src = "src/icon-sun.svg";
+    });
+    return;
+  }
+  if (!document.startViewTransition) {
+    body.setAttribute("data-bs-theme", "dark");
+    iconTheme.src = "src/icon-moon.svg";
+  }
+  document.startViewTransition(() => {
+    body.setAttribute("data-bs-theme", "dark");
+
+    iconTheme.src = "src/icon-moon.svg";
+  });
+});

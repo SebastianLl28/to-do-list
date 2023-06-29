@@ -3,10 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="src/bootstrap.css" />
+    <title>To do List</title>
   </head>
   <body class="container" data-bs-theme="dark">
+    <div
+      class="button-theme bg-body-secondary rounded-5 d-flex"
+      role="button"
+      id="btnTheme"
+    >
+      <img
+        class="w-50 h-50 m-auto"
+        id="themeIcon"
+        src="src/icon-moon.svg"
+        alt="icon moon"
+      />
+    </div>
     <main class="min-vh-100 row align-content-center gap-4">
       <div class="w-75 m-auto px-0">
         <form id="formTask">
@@ -54,6 +66,6 @@
         </div>
       </div>
     </main>
-    <script src="main.js"></script>
+    <script src="src/main.js"></script>
   </body>
 </html>
